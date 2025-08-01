@@ -11,8 +11,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#25D366',
-                        secondary: '#128C7E',
+                        primary: '#1E40AF',
+                        secondary: '#1E3A8A',
                         dark: '#1E293B',
                         light: '#F8FAFC',
                     }
@@ -73,7 +73,7 @@
 <body class="font-sans bg-gray-50 text-gray-800">
     <!-- Floating WhatsApp Button -->
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/905355404743" class="bg-primary hover:bg-secondary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg floating-btn transition-colors duration-300">
+        <a href="https://wa.me/905355404743" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg floating-btn transition-colors duration-300">
             <i class="fab fa-whatsapp text-2xl"></i>
         </a>
     </div>
@@ -83,8 +83,14 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <div class="text-2xl font-bold text-primary">BUY-REVIEWS</div>
-                    <div class="ml-2 text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">TRUSTED</div>
+                    <div class="text-2xl font-bold text-primary">GET-REVIEWS</div>
+                    <div class="ml-2 flex items-center text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
+                        <i class="fas fa-star text-yellow-500 mr-1"></i>
+                        <i class="fas fa-star text-yellow-500 mr-1"></i>
+                        <i class="fas fa-star text-yellow-500 mr-1"></i>
+                        <i class="fas fa-star text-yellow-500 mr-1"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="#home" class="hover:text-secondary transition-colors">Home</a>
@@ -134,6 +140,98 @@
                         <i class="fab fa-whatsapp mr-1"></i> Checkout
                     </button>
                 </div>
+
+                <!-- Package 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition-all duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold">100 Reviews</h3>
+                        <p class="text-gray-500 mt-1">For established businesses</p>
+                        <div class="mt-4">
+                            <span class="text-3xl font-bold">$300</span>
+                            <span class="text-gray-500">total ($3/review)</span>
+                        </div>
+                        <ul class="mt-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Gradual posting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Custom review text</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Real accounts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Priority support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Review monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button onclick="addToCart(100, 300)" class="w-full mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                <i class="fas fa-cart-plus mr-1"></i> Add to Cart
+                            </button>
+                            <button onclick="orderNow(100)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Order Direct
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 7 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition-all duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold">200 Reviews</h3>
+                        <p class="text-gray-500 mt-1">For premium visibility</p>
+                        <div class="mt-4">
+                            <span class="text-3xl font-bold">$550</span>
+                            <span class="text-gray-500">total ($2.75/review)</span>
+                        </div>
+                        <ul class="mt-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Gradual posting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Custom review text</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Real accounts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Priority support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Review monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button onclick="addToCart(200, 550)" class="w-full mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                <i class="fas fa-cart-plus mr-1"></i> Add to Cart
+                            </button>
+                            <button onclick="orderNow(200)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Order Direct
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
                                 
@@ -144,7 +242,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-green-50 to-blue-50 pt-28 pb-16 md:pt-32 md:py-24">
+    <section id="home" class="bg-gradient-to-r from-blue-50 to-white pt-28 pb-16 md:pt-32 md:py-24">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
                 <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Order Online Reviews for Business - 100% Real and Permanent</h1>
@@ -157,6 +255,8 @@
                         <i class="fas fa-star mr-2"></i> See Testimonials
                     </a>
                 </div>
+            </div>
+
             </div>
         </div>
     </section>
@@ -218,26 +318,26 @@
     <!-- Guarantee Section -->
     <section class="bg-white py-12">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-green-50 rounded-xl p-6 md:p-8">
+            <div class="max-w-4xl mx-auto bg-blue-50 rounded-xl p-6 md:p-8">
                 <h2 class="text-2xl font-bold text-center mb-6">Our 100% Real and Permanent Reviews Guarantee</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-                        <div class="bg-green-100 p-3 rounded-full inline-block mb-3">
-                            <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                        <div class="bg-blue-100 p-3 rounded-full inline-block mb-3">
+                            <i class="fas fa-check-circle text-blue-600 text-xl"></i>
                         </div>
                         <h3 class="font-bold mb-2">Authentic Profiles</h3>
                         <p class="text-gray-600 text-sm">All reviews come from Real accounts with complete profiles</p>
                     </div>
                     <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-                        <div class="bg-green-100 p-3 rounded-full inline-block mb-3">
-                            <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                        <div class="bg-blue-100 p-3 rounded-full inline-block mb-3">
+                            <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
                         </div>
                         <h3 class="font-bold mb-2">Permanent Reviews</h3>
                         <p class="text-gray-600 text-sm">Our reviews stick - we replace any that get removed within 30 days</p>
                     </div>
                     <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-                        <div class="bg-green-100 p-3 rounded-full inline-block mb-3">
-                            <i class="fas fa-lock text-green-600 text-xl"></i>
+                        <div class="bg-blue-100 p-3 rounded-full inline-block mb-3">
+                            <i class="fas fa-lock text-blue-600 text-xl"></i>
                         </div>
                         <h3 class="font-bold mb-2">No Password Needed</h3>
                         <p class="text-gray-600 text-sm">We never ask for your GMB login credentials</p>
@@ -251,8 +351,8 @@
     <section id="packages" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Choose Your Package</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <!-- Demo Package -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Free Demo Package -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition-all duration-300">
                     <div class="p-6">
                         <div class="flex justify-between items-start">
@@ -273,11 +373,15 @@
                                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                                 <span>Custom review text</span>
                             </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Real accounts</span>
+                            </li>
                         </ul>
                         <button onclick="addToCart(3, 0)" class="w-full mt-8 bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
                             <i class="fas fa-gift mr-2"></i> Get Free Demo
                         </button>
-                        <button onclick="orderNow(3)" class="w-full mt-2 bg-white hover:bg-gray-100 text-primary font-bold py-3 px-4 rounded-lg border border-primary transition-colors duration-300">
+                        <button onclick="orderNow(3)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
                         </button>
                     </div>
@@ -312,7 +416,7 @@
                         <button onclick="addToCart(5, 25)" class="w-full mt-8 bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
                             <i class="fas fa-cart-plus mr-2"></i> Add to Cart
                         </button>
-                        <button onclick="orderNow(5)" class="w-full mt-2 bg-white hover:bg-gray-100 text-primary font-bold py-3 px-4 rounded-lg border border-primary transition-colors duration-300">
+                        <button onclick="orderNow(5)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
                         </button>
                     </div>
@@ -348,7 +452,7 @@
                         <button onclick="addToCart(10, 45)" class="w-full mt-8 bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
                             <i class="fas fa-cart-plus mr-2"></i> Add to Cart
                         </button>
-                        <button onclick="orderNow(10)" class="w-full mt-2 bg-white hover:bg-gray-100 text-primary font-bold py-3 px-4 rounded-lg border border-primary transition-colors duration-300">
+                        <button onclick="orderNow(10)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
                         </button>
                     </div>
@@ -388,7 +492,7 @@
                         <button onclick="addToCart(20, 85)" class="w-full mt-8 bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
                             <i class="fas fa-cart-plus mr-2"></i> Add to Cart
                         </button>
-                        <button onclick="orderNow(20)" class="w-full mt-2 bg-white hover:bg-gray-100 text-primary font-bold py-3 px-4 rounded-lg border border-primary transition-colors duration-300">
+                        <button onclick="orderNow(20)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
                         </button>
                     </div>
@@ -432,18 +536,16 @@
                         <button onclick="addToCart(30, 125)" class="w-full mt-8 bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
                             <i class="fas fa-cart-plus mr-2"></i> Add to Cart
                         </button>
-                        <button onclick="orderNow(30)" class="w-full mt-2 bg-white hover:bg-gray-100 text-primary font-bold py-3 px-4 rounded-lg border border-primary transition-colors duration-300">
+                        <button onclick="orderNow(30)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
                         </button>
                     </div>
                 </div>
             </div>
-                                                
-            <!-- Additional Packages -->
-            <h3 class="text-2xl font-bold text-center mt-16 mb-8">Specialized Packages</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Package 5 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition-all duration-300">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Package 4 - 30 Reviews -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition-all duration-300 h-full flex flex-col">
                     <div class="p-6">
                         <h3 class="text-xl font-bold">50 Reviews</h3>
                         <p class="text-gray-500 mt-1">Best value package</p>
@@ -477,15 +579,106 @@
                                 <span>Dedicated account manager</span>
                             </li>
                         </ul>
-                        <button onclick="addToCart(50, 170)" class="w-full mt-8 bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
+                        <div class="mt-auto">
+                            <button onclick="addToCart(50, 175)" class="w-full mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                <i class="fas fa-cart-plus mr-1"></i> Add to Cart
+                            </button>
+                            <button onclick="orderNow(50)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Order Direct
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 6 - 100 Reviews -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition-all duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold">100 Reviews</h3>
+                        <p class="text-gray-500 mt-1">For established businesses</p>
+                        <div class="mt-4">
+                            <span class="text-3xl font-bold">$300</span>
+                            <span class="text-gray-500">total ($3/review)</span>
+                        </div>
+                        <ul class="mt-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Gradual posting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Custom review text</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Real accounts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Priority support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Review monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button onclick="addToCart(100, 300)" class="w-full mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                <i class="fas fa-cart-plus mr-1"></i> Add to Cart
+                            </button>
+                            <button onclick="orderNow(100)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Order Direct
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 7 - 200 Reviews -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition-all duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold">200 Reviews</h3>
+                        <p class="text-gray-500 mt-1">For premium visibility</p>
+                        <div class="mt-4">
+                            <span class="text-3xl font-bold">$550</span>
+                            <span class="text-gray-500">total ($2.75/review)</span>
+                        </div>
+                        <ul class="mt-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Gradual posting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Custom review text</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Real accounts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Priority support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Review monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        <button onclick="addToCart(200, 550)" class="w-full mt-8 bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
                             <i class="fas fa-cart-plus mr-2"></i> Add to Cart
                         </button>
-                        <button onclick="orderNow(50)" class="w-full mt-2 bg-white hover:bg-gray-100 text-primary font-bold py-3 px-4 rounded-lg border border-primary transition-colors duration-300">
+                        <button onclick="orderNow(200)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
                         </button>
                     </div>
                 </div>
-                                                            
             </div>
         </div>
     </section>
@@ -970,7 +1163,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-green-500 to-green-600 text-white">
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-6">Ready to Boost Your Business?</h2>
             <p class="text-xl mb-8">Join 12,500+ businesses that trust BUY-REVIEWS for their online reputation.</p>
@@ -1176,6 +1369,18 @@
                     break;
                 case 50:
                     price = '$175 total';
+                    break;
+                case 100:
+                    price = '$300 total';
+                    break;
+                case 200:
+                    price = '$550 total';
+                    break;
+                case 100:
+                    price = '$300 total';
+                    break;
+                case 200:
+                    price = '$550 total';
                     break;
                 default:
                     price = '';
