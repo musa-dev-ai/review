@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +15,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E40AF',
-                        secondary: '#1E3A8A',
+                        primary: '#54DBFD',
+                        secondary: '#3EC9EB',
                         dark: '#1E293B',
                         light: '#F8FAFC',
                     }
@@ -72,15 +73,20 @@
             transition: width 0.5s ease;
         }
         
-        .hero-image {
+        .container {
             width: 100%;
-            height: 100vh;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
             object-fit: cover;
             object-position: top center;
-            image-rendering: auto;
             filter: brightness(110%) contrast(105%) saturate(125%);
             opacity: 0.9;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 50%);
         }
         
     </style>
@@ -124,9 +130,14 @@
                                 <p class="text-center py-4">Your cart is empty</p>
                             </div>
                             <div class="border-t border-gray-100 px-4 py-2">
-                                <button id="checkout-btn" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
-                                    <i class="fab fa-whatsapp mr-2"></i> Checkout
-                                </button>
+                                <div class="flex space-x-2">
+                                    <button id="checkout-btn" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                                    </button>
+                                    <button onclick="telegramCheckout()" class="flex-1 bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                                        <i class="fab fa-telegram mr-2"></i> Telegram
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -153,6 +164,9 @@
                     </button>
                     <button id="mobile-checkout-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-3 rounded text-sm transition-colors duration-300">
                         <i class="fab fa-whatsapp mr-1"></i> Checkout
+                    </button>
+                    <button onclick="telegramCheckout()" class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-1 px-3 rounded text-sm transition-colors duration-300">
+                        <i class="fab fa-telegram mr-1"></i> Telegram
                     </button>
                 </div>
 
@@ -197,6 +211,12 @@
                             </button>
                             <button onclick="orderNow(100)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
                                 <i class="fab fa-whatsapp mr-1"></i> Order Direct
+                            </button>
+                            <button onclick="orderViaTelegram(100)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-lg border border-blue-400 transition-colors duration-300 text-sm">
+                                <i class="fab fa-telegram mr-1"></i> Order via Telegram
+                            </button>
+                            <button onclick="orderViaTelegram(100)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-lg border border-blue-400 transition-colors duration-300 text-sm">
+                                <i class="fab fa-telegram mr-1"></i> Order via Telegram
                             </button>
                         </div>
                     </div>
@@ -244,6 +264,9 @@
                             <button onclick="orderNow(200)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
                                 <i class="fab fa-whatsapp mr-1"></i> Order Direct
                             </button>
+                            <button onclick="orderViaTelegram(200)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-lg border border-blue-400 transition-colors duration-300 text-sm">
+                                <i class="fab fa-telegram mr-1"></i> Order via Telegram
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -267,12 +290,20 @@
                 <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Order Online Reviews for Business - 100% Real and Permanent</h1>
                 <p class="text-lg md:text-xl text-gray-600 mb-8">Trusted by 12,500+ businesses • Starts at $5/review • No GMB password required</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#packages" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 whatsapp-btn">
-                        <i class="fab fa-whatsapp mr-2"></i> Order Now via WhatsApp
-                    </a>
-                    <a href="#testimonials" class="inline-block bg-white hover:bg-gray-100 text-primary font-bold py-3 px-8 rounded-full border border-primary transition-all duration-300">
-                        <i class="fas fa-star mr-2"></i> See Testimonials
-                    </a>
+                    <div class="flex flex-col gap-2">
+                        <a href="#packages" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 whatsapp-btn">
+                            <i class="fab fa-whatsapp mr-2"></i> Order via WhatsApp
+                        </a>
+                        <a href="#packages" class="inline-block bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
+                        </a>
+                    </div>
+                   <a href="#testimonials" class="inline-flex items-center bg-blue-400 hover:bg-blue-500 text-white font-semibold text-sm py-2 px-6 rounded-full transition duration-300">
+    <i class="fas fa-star mr-2 text-sm"></i>View Testimonials
+</a>
+
+
+
                 </div>
             </div>
 
@@ -404,6 +435,9 @@
                         <button onclick="orderNow(3)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
                         </button>
+                        <button onclick="orderViaTelegram(3)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
+                        </button>
                     </div>
                 </div>
 
@@ -438,6 +472,9 @@
                         </button>
                         <button onclick="orderNow(5)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
+                        </button>
+                        <button onclick="orderViaTelegram(5)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
                         </button>
                     </div>
                 </div>
@@ -474,6 +511,9 @@
                         </button>
                         <button onclick="orderNow(10)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
+                        </button>
+                        <button onclick="orderViaTelegram(10)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
                         </button>
                     </div>
                 </div>
@@ -514,6 +554,9 @@
                         </button>
                         <button onclick="orderNow(20)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
+                        </button>
+                        <button onclick="orderViaTelegram(20)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
                         </button>
                     </div>
                 </div>
@@ -558,6 +601,9 @@
                         </button>
                         <button onclick="orderNow(30)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
+                        </button>
+                        <button onclick="orderViaTelegram(30)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
                         </button>
                     </div>
                 </div>
@@ -605,6 +651,9 @@
                             <button onclick="orderNow(50)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
                                 <i class="fab fa-whatsapp mr-1"></i> Order Direct
                             </button>
+                            <button onclick="orderViaTelegram(50)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                                <i class="fab fa-telegram mr-1"></i> Order via Telegram
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -651,6 +700,9 @@
                             <button onclick="orderNow(100)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg border border-green-500 transition-colors duration-300 text-sm">
                                 <i class="fab fa-whatsapp mr-1"></i> Order Direct
                             </button>
+                             <button onclick="orderViaTelegram(100)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
+                        </button>
                         </div>
                     </div>
                 </div>
@@ -695,6 +747,9 @@
                         </button>
                         <button onclick="orderNow(200)" class="w-full mt-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg border border-green-500 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i> Order Direct
+                        </button>
+                        <button onclick="orderViaTelegram(200)" class="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg border border-blue-400 transition-colors duration-300">
+                            <i class="fab fa-telegram mr-2"></i> Order via Telegram
                         </button>
                     </div>
                 </div>
@@ -1119,7 +1174,7 @@
                         <i class="fas fa-chevron-down transition-transform duration-300" id="faq-icon-5"></i>
                     </button>
                     <div id="faq-content-5" class="hidden bg-white p-4 rounded-b-lg">
-                        <p class="text-gray-700">Reviews are typically posted gradually over 2-4 weeks to appear natural. Most clients see noticeable improvements in their rankings and customer inquiries within 4-6 weeks as the algorithm recognizes the increased review activity.</p>
+                        <p class="text-gray-700">Reviews are typically posted gradually over 1-2 days to appear natural. Most clients see noticeable improvements in their rankings and customer inquiries within 2-4 days as the algorithm recognizes the increased review activity.</p>
                     </div>
                 </div>
                                                             
@@ -1187,11 +1242,14 @@
             <h2 class="text-3xl font-bold mb-6">Ready to Boost Your Business?</h2>
             <p class="text-xl mb-8">Join 12,500+ businesses that trust BUY-REVIEWS for their online reputation.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#packages" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+                <a href="#packages" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
                     <i class="fab fa-whatsapp mr-2"></i> Order Now
                 </a>
-                <a href="tel:+905355404743" class="inline-block bg-transparent hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full border border-white transition-all duration-300">
-                    <i class="fas fa-phone-alt mr-2"></i> Call Us Now
+                <a href="https://t.me/Doxymedia" class="inline-block bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
+                    <i class="fab fa-telegram mr-2"></i> Telegram
+                </a>
+                <a href="tel:+905355404743" class="inline-block bg-transparent hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full border border-white transition-all duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Us
                 </a>
             </div>
         </div>
@@ -1335,7 +1393,36 @@
             }, 3000);
         }
                         
-        // Checkout function
+        // Telegram Checkout function
+        function telegramCheckout() {
+            if (cartItems.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+                        
+            let message = "*Hello  👋 GET-REVIEWS!*";
+            message += "*I'm ready to place my order:*";
+            let total = 0;
+                        
+            cartItems.forEach(item => {
+                message += `• *${item.name}:* ${item.price.toFixed(2)}`;
+                total += item.price;
+            });
+                        
+            message += `*Total:* ${total.toFixed(2)}`;
+            message += "*Business Link:* (please provide your Google business link)";
+            message += "*Custom Text:* Yes (will provide details)";
+            message += "*Delivery Speed:* Gradual (recommended)";
+            message += "*Please confirm:*";
+            message += "• Total price";
+            message += "• Payment methods";
+            message += "• Estimated timeline";
+            message += "*Looking forward to your reply!*";
+                        
+            window.open(`https://t.me/Doxymedia?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // WhatsApp Checkout function
         function checkout() {
             if (cartItems.length === 0) {
                 alert('Your cart is empty!');
@@ -1367,6 +1454,48 @@
             updateCartDropdown();
         }
                         
+        // Telegram Order Function
+        function orderViaTelegram(reviewCount) {
+            let price = '';
+            switch(reviewCount) {
+                case 5:
+                    price = '$25 total';
+                    break;
+                case 10:
+                    price = '$45 total';
+                    break;
+                case 20:
+                    price = '$85 total';
+                    break;
+                case 30:
+                    price = '$125 total';
+                    break;
+                case 3:
+                    price = '$0 (Free Demo)';
+                    break;
+                case 50:
+                    price = '$175 total';
+                    break;
+                case 100:
+                    price = '$300 total';
+                    break;
+                case 200:
+                    price = '$550 total';
+                    break;
+                default:
+                    price = '';
+            }
+                                        
+            const message = `Hello GET-REVIEWS!
+I want to order *${reviewCount} Google Reviews* for *${price}*
+Please provide:
+- Payment details
+- Estimated timeline
+- Any requirements`;
+                                        
+            window.open(`https://t.me/Doxymedia?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
         // WhatsApp Order Function
         function orderNow(reviewCount) {
             let price = '';
@@ -1384,7 +1513,7 @@
                     price = '$125 total';
                     break;
                 case 3:
-                    price = '$15 total';
+                    price = '$0 (Free Demo)';
                     break;
                 case 50:
                     price = '$175 total';
@@ -1405,7 +1534,18 @@
                     price = '';
             }
                                         
-            const message = `*Hello BUY-REVIEWS!**I'm ready to place my order:**Package:* ${reviewCount} Google Reviews*Price:* ${price}*Business Link:* https://g.page/MyBiz*Custom Text:* Yes (will provide details)*Delivery Speed:* Gradual (recommended)*Please confirm:*• Total price• Payment methods• Estimated timeline*Looking forward to your reply!*`;
+            const message = `*Hello 👋 GET-REVIEWS!*
+*I'm ready to place my order!*
+I want to get *${reviewCount} Google Reviews* for *${price}*
+*How does it work?*
+*Custom Text:*
+Yes (will provide details)
+*Delivery Speed:*
+Gradual (recommended)
+*Please confirm:*
+• Total price
+• Payment methods
+• Estimated timeline`;
                                         
             window.open(`https://wa.me/905355404743?text=${encodeURIComponent(message)}`, '_blank');
         }
@@ -1472,6 +1612,7 @@
                         
         // Checkout Buttons
         document.getElementById('checkout-btn').addEventListener('click', checkout);
+        document.getElementById('telegram-checkout-btn').addEventListener('click', telegramCheckout);
         document.getElementById('mobile-checkout-btn').addEventListener('click', checkout);
                         
         // Close cart dropdown when clicking outside
