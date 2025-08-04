@@ -90,7 +90,7 @@
         
     </style>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/><meta content="Buy real Google reviews and grow your business trust with GetGoogleReviews.info." name="description"/><link href="https://www.getgooglereviews.info/" rel="canonical"/></head>
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-sans bg-sky-50 text-gray-800">
 <!-- Floating WhatsApp Button -->
 <div class="fixed bottom-6 right-6 z-50">
 <a class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg floating-btn transition-colors duration-300" href="https://wa.me/905355404743">
@@ -273,32 +273,38 @@
         </div>
 </header>
 <!-- Hero Section -->
-<section class="pt-28 md:pt-32 md:py-24 px-4 relative text-center py-12 pb-16" id="home"><div class="max-w-3xl mx-auto">
-<div class="absolute inset-0 overflow-hidden">
-<img alt="Hero background" class="hero-image opacity-50" src="con.jpg"/>
-</div>
-<div class="relative z-10">
-<div class="container mx-auto px-4">
-<div class="max-w-3xl mx-auto text-center relative z-10">
-<h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 text-3xl md:text-5xl font-bold break-words">Order Online Reviews for Business - 100% Real and Permanent</h1>
-<p class="text-lg md:text-xl text-gray-600 mb-8">Trusted by 12,500+ businesses • Starts at $5/review • No GMB password required</p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<div class="flex flex-col gap-2">
-<a class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 whatsapp-btn" href="#packages">
-<i class="fab fa-whatsapp mr-2"></i> Order via WhatsApp
-                        </a>
-<a class="inline-block bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full transition-all duration-300" href="#packages">
-<i class="fab fa-telegram mr-2"></i> Order via Telegram
-                        </a>
-<a class="inline-block bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full transition-all duration-300" href="#process">
-<i class="fas fa-star mr-2 text-sm"></i>How does it work??
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></section>
+<section class="pt-24 sm:pt-32 px-4 relative text-center pb-16 bg-white" id="home">
+  <!-- Background with overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="con.jpg" alt="Hero background" class="w-full h-full object-cover opacity-80 brightness-110 contrast-110 saturate-125" />
+    <div class="absolute inset-0 bg-white bg-opacity-40 sm:bg-opacity-20"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-md mx-auto text-gray-900">
+    <h1 class="text-2xl sm:text-4xl font-bold leading-snug mb-4 text-sky-800">
+      Order Online Reviews for Your Business<br />
+      <span class="text-sky-700 font-extrabold">100% Real & Permanent</span>
+    </h1>
+    <p class="text-base sm:text-lg text-gray-900 mb-6">
+      Trusted by 12,500+ businesses • Starts at $5/review • No GMB password required
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col gap-3 items-center">
+      <a href="#process" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full text-sm shadow-md w-full max-w-xs text-center">
+        <i class="fas fa-question-circle mr-2 text-sm"></i> How does it work??
+      </a>
+      <a href="#packages" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full text-sm shadow-md w-full max-w-xs text-center">
+        <i class="fab fa-whatsapp mr-2"></i> Order via WhatsApp
+      </a>
+      <a href="#packages" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-6 rounded-full text-sm shadow-md w-full max-w-xs text-center">
+        <i class="fab fa-telegram mr-2"></i> Order via Telegram
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Stats Section -->
 <section class="py-8 bg-white">
 <div class="container mx-auto px-4">
@@ -782,7 +788,7 @@
 <div class="bg-white p-6 rounded-lg shadow-sm text-center">
 <div class="bg-green-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4" style="color: #3EC9EB; font-weight: bold; font-size: 1.25rem;">1</div>
 <h3 class="text-xl font-bold mb-2">Place Your Order</h3>
-<p class="text-gray-600">Select your package and provide your business details via WhatsApp.</p>
+<p class="text-gray-600">Select your package and provide your business details via WhatsApp or Telegram.</p>
 </div>
 <!-- Step 2 -->
 <div class="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -1567,5 +1573,20 @@ Gradual (recommended)
         });
       });
     });
-    </script></body>
+    </script>
+<script>
+  // Close mobile menu when a link is clicked
+  document.addEventListener("DOMContentLoaded", function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  });
+</script>
+
+</body>
 </html>
