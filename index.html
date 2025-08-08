@@ -1,6 +1,5 @@
-
+ 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -89,7 +88,43 @@
         }
         
     </style>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/><meta content="Buy real Google reviews and grow your business trust with GetGoogleReviews.info." name="description"/><link href="https://www.getgooglereviews.info/" rel="canonical"/></head>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/><meta content="Buy real Google reviews and grow your business trust with GetGoogleReviews.info." name="description"/><link href="https://www.getgooglereviews.info/" rel="canonical"/>
+<style>
+#cart-dropdown {
+    transition: transform 0.3s ease-in-out;
+}
+#cart-dropdown.hidden {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+</style>
+
+
+<style>
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+}
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+button {
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    transform: translateY(-1px);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+</style>
+
+</head>
 <body class="font-sans bg-sky-50 text-gray-800">
 <!-- Floating WhatsApp Button -->
 <div class="fixed bottom-6 right-6 z-50">
@@ -282,17 +317,17 @@
 
   <!-- Content -->
   <div class="relative z-10 max-w-md mx-auto text-gray-900">
-    <h1 class="text-2xl sm:text-4xl font-bold leading-snug mb-4 text-sky-800">
-      Order Online Reviews for Your Business<br />
-      <span class="text-sky-700 font-extrabold">100% Real & Permanent</span>
+    <h1 class="text-2xl sm:text-4xl font-bold leading-snug mb-4 text-black-800">
+      Get 5-Star Online Reviews for Your Business<br />
+      <span class="text-black-700 font-extrabold">100% Real & Permanent</span>
     </h1>
-    <p class="text-base sm:text-lg text-gray-900 mb-6">
-      Trusted by 12,500+ businesses • Starts at $5/review • No GMB password required
-    </p>
+    <p class="text-base sm:text-lg text-black mb-6">
+  Trusted by 12,500+ businesses • Starts at $5/review • No GMB password required
+</p>
 
     <!-- Buttons -->
     <div class="flex flex-col gap-3 items-center">
-      <a href="#process" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full text-sm shadow-md w-full max-w-xs text-center">
+      <a href="#process" class="bg-orange-300 hover:bg-orange-400 text-white font-semibold py-2 px-6 rounded-full text-sm shadow-md w-full max-w-xs text-center">
         <i class="fas fa-question-circle mr-2 text-sm"></i> How does it work??
       </a>
       <a href="#packages" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full text-sm shadow-md w-full max-w-xs text-center">
@@ -1080,7 +1115,8 @@
 <i class="fas fa-chevron-down transition-transform duration-300" id="faq-icon-1"></i>
 </button>
 <div class="hidden bg-white p-4 rounded-b-lg" id="faq-content-1">
-<p class="text-gray-700">While purchasing reviews is against Google's terms of service, many businesses use this strategy to compete in today's market. We ensure all reviews appear natural and are posted gradually to maintain authenticity.</p>
+<p class="text-gray-700">Yes, it is legal if you are buying reviews from authentic sites that provide genuine reviews.
+Buying reviews is an effective marketing strategy to develop an online presence.</p>
 </div>
 </div>
 <!-- FAQ 2 -->
@@ -1090,7 +1126,7 @@
 <i class="fas fa-chevron-down transition-transform duration-300" id="faq-icon-2"></i>
 </button>
 <div class="hidden bg-white p-4 rounded-b-lg" id="faq-content-2">
-<p class="text-gray-700">Yes, all reviews come from Real accounts with complete profiles that appear authentic. We use a network of established accounts to ensure your reviews look completely natural.</p>
+<p class="text-gray-700">Yes, all reviews come from Real accounts with complete profiles that are authentic. We use a network of established accounts to ensure your reviews are completely natural.</p>
 </div>
 </div>
 <!-- FAQ 3 -->
@@ -1247,346 +1283,294 @@
 </div>
 </div>
 </footer>
+
 <script>
-        // Cart functionality
-        let cartItems = [];
-        let cartCount = 0;
-                        
-        // Add to cart function
-        function addToCart(item, price) {
-            let itemName = typeof item === 'number' ? `${item} Google Reviews` : item;
-            cartItems.push({name: itemName, price: price});
-            cartCount++;
-                        
-            // Update cart count display
-            document.getElementById('cart-count').textContent = cartCount;
-            document.getElementById('mobile-cart-count').textContent = cartCount;
-                        
-            // Update cart dropdown
-            updateCartDropdown();
-                        
-            // Show notification
-            showCartNotification();
-        }
-                        
-        // Update cart dropdown
-        function updateCartDropdown() {
-            const cartItemsContainer = document.getElementById('cart-items');
-                        
-            if (cartItems.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="text-center py-4">Your cart is empty</p>';
-                return;
-            }
-                        
-            let html = '';
-            let total = 0;
-                        
-            cartItems.forEach((item, index) => {
-                total += item.price;
-                html += `
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
-                        <div>
-                            <p class="font-medium">${item.name}</p>
-                            <p class="text-gray-500">$${item.price.toFixed(2)}</p>
-                        </div>
-                        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                `;
-            });
-                        
-            html += `
-                <div class="flex justify-between items-center py-2 font-bold">
-                    <span>Total:</span>
-                    <span>$${total.toFixed(2)}</span>
-                </div>
-            `;
-                        
-            cartItemsContainer.innerHTML = html;
-        }
-                        
-        // Remove from cart
-        function removeFromCart(index) {
-            cartItems.splice(index, 1);
-            cartCount--;
-                        
-            // Update cart count display
-            document.getElementById('cart-count').textContent = cartCount;
-            document.getElementById('mobile-cart-count').textContent = cartCount;
-                        
-            // Update cart dropdown
-            updateCartDropdown();
-        }
-                        
-        // Show cart notification
-        function showCartNotification() {
-            const notification = document.getElementById('cart-notification');
-            notification.classList.remove('hidden');
-                        
-            setTimeout(() => {
-                notification.classList.add('hidden');
-            }, 3000);
-        }
-                        
-        // Telegram Checkout function
-        function telegramCheckout() {
-            if (cartItems.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-                        
-            let message = "*Hello  👋 GET-REVIEWS!*";
-            message += "*I'm ready to place my order:*";
-            let total = 0;
-                        
-            cartItems.forEach(item => {
-                message += `• *${item.name}:* ${item.price.toFixed(2)}`;
-                total += item.price;
-            });
-                        
-            message += `*Total:* ${total.toFixed(2)}`;
-            message += "*Business Link:* (please provide your Google business link)";
-            message += "*Custom Text:* Yes (will provide details)";
-            message += "*Delivery Speed:* Gradual (recommended)";
-            message += "*Please confirm:*";
-            message += "• Total price";
-            message += "• Payment methods";
-            message += "• Estimated timeline";
-            message += "*Looking forward to your reply!*";
-                        
-            window.open(`https://t.me/Doxymedia?text=${encodeURIComponent(message)}`, '_blank');
-        }
+/* =========================
+   Cart & Checkout Scripts
+   ========================= */
 
-        // WhatsApp Checkout function
-        function checkout() {
-            if (cartItems.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-                        
-            let message = "*Hello BUY-REVIEWS!**I'm ready to place my order:*";
-                        
-            cartItems.forEach(item => {
-                message += `• *${item.name}:* ${item.price.toFixed(2)}`;
-            });
-                        
-            message += "*Business Link:* https://g.page/MyBiz";
-            message += "*Custom Text:* Yes (will provide details)";
-            message += "*Delivery Speed:* Gradual (recommended)";
-            message += "*Please confirm:*";
-            message += "• Total price";
-            message += "• Payment methods";
-            message += "• Estimated timeline";
-            message += "*Looking forward to your reply!*";
-                        
-            window.open(`https://wa.me/905355404743?text=${encodeURIComponent(message)}`, '_blank');
-                        
-            // Clear cart after checkout
-            cartItems = [];
-            cartCount = 0;
-            document.getElementById('cart-count').textContent = '0';
-            document.getElementById('mobile-cart-count').textContent = '0';
-            updateCartDropdown();
-        }
-                        
-        // Telegram Order Function
-        function orderViaTelegram(reviewCount) {
-            let price = '';
-            switch(reviewCount) {
-                case 5:
-                    price = '$25 total';
-                    break;
-                case 10:
-                    price = '$45 total';
-                    break;
-                case 20:
-                    price = '$85 total';
-                    break;
-                case 30:
-                    price = '$125 total';
-                    break;
-                case 3:
-                    price = '$0 (Free Demo)';
-                    break;
-                case 50:
-                    price = '$175 total';
-                    break;
-                case 100:
-                    price = '$300 total';
-                    break;
-                case 200:
-                    price = '$550 total';
-                    break;
-                default:
-                    price = '';
-            }
-                                        
-            const message = `Hello GET-REVIEWS!
-I want to order *${reviewCount} Google Reviews* for *${price}*
-Please provide:
-- Payment details
-- Estimated timeline
-- Any requirements`;
-                                        
-            window.open(`https://t.me/Doxymedia?text=${encodeURIComponent(message)}`, '_blank');
-        }
+// Load cart from localStorage
+let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
 
-        // WhatsApp Order Function
-        function orderNow(reviewCount) {
-            let price = '';
-            switch(reviewCount) {
-                case 5:
-                    price = '$25 total';
-                    break;
-                case 10:
-                    price = '$45 total';
-                    break;
-                case 20:
-                    price = '$85 total';
-                    break;
-                case 30:
-                    price = '$125 total';
-                    break;
-                case 3:
-                    price = '$0 (Free Demo)';
-                    break;
-                case 50:
-                    price = '$175 total';
-                    break;
-                case 100:
-                    price = '$300 total';
-                    break;
-                case 200:
-                    price = '$550 total';
-                    break;
-                case 100:
-                    price = '$300 total';
-                    break;
-                case 200:
-                    price = '$550 total';
-                    break;
-                default:
-                    price = '';
-            }
-                                        
-            const message = `*Hello 👋 GET-REVIEWS!*
-*I'm ready to place my order!*
-I want to get *${reviewCount} Google Reviews* for *${price}*
-*How does it work?*
-*Custom Text:*
-Yes (will provide details)
-*Delivery Speed:*
-Gradual (recommended)
-*Please confirm:*
-• Total price
-• Payment methods
-• Estimated timeline`;
-                                        
-            window.open(`https://wa.me/905355404743?text=${encodeURIComponent(message)}`, '_blank');
-        }
-                        
-        // FAQ Toggle Function
-        function toggleFAQ(id) {
-            const content = document.getElementById(`faq-content-${id}`);
-            const icon = document.getElementById(`faq-icon-${id}`);
-                                        
-            content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
-                        
-        // Smooth scroll function
-        function smoothScroll(target, duration) {
-            const targetElement = document.querySelector(target);
-            const targetPosition = targetElement.getBoundingClientRect().top;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition;
-            let startTime = null;
+// Utility: save cart and update UI
+function saveCart() {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    updateCartCount();
+    updateCartDropdown();
+}
 
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const run = ease(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
+// Update cart count badges
+function updateCartCount() {
+    const desktop = document.getElementById('cart-count');
+    const mobile = document.getElementById('mobile-cart-count');
+    const count = cartItems.length;
+    if (desktop) desktop.textContent = count;
+    if (mobile) mobile.textContent = count;
+}
 
-            function ease(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t + b;
-                t--;
-                return -c / 2 * (t * (t - 2) - 1) + b;
-            }
+// Add to cart (called by package buttons)
+function addToCart(item, price) {
+    const itemName = (typeof item === 'number') ? `${item} Google Reviews` : item;
+    const priceNum = (typeof price === 'number') ? price : parseFloat(price) || 0;
+    cartItems.push({ name: itemName, price: priceNum });
+    saveCart();
+    showCartNotification();
+}
 
-            requestAnimationFrame(animation);
-        }
-
-        // Add smooth scroll to all navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = this.getAttribute('href');
-                smoothScroll(target, 500); // 500ms = 0.5 second duration
-            });
-        });
-
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-                        
-        // Cart Dropdown Toggle
-        document.getElementById('cart-btn').addEventListener('click', function() {
-            document.getElementById('cart-dropdown').classList.toggle('hidden');
-        });
-                        
-        // Mobile Cart Button
-        document.getElementById('mobile-cart-btn').addEventListener('click', function() {
-            // In a full implementation, this would show the cart contents
-            alert('Your cart contains ' + cartCount + ' items');
-        });
-                        
-        // Checkout Buttons
-        document.getElementById('checkout-btn').addEventListener('click', checkout);
-        document.getElementById('telegram-checkout-btn').addEventListener('click', telegramCheckout);
-        document.getElementById('mobile-checkout-btn').addEventListener('click', checkout);
-                        
-        // Close cart dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const cartBtn = document.getElementById('cart-btn');
-            const cartDropdown = document.getElementById('cart-dropdown');
-                                        
-            if (!cartBtn.contains(event.target) && !cartDropdown.contains(event.target)) {
-                cartDropdown.classList.add('hidden');
-            }
-        });
-    </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      });
-    });
-    </script>
-<script>
-  // Close mobile menu when a link is clicked
-  document.addEventListener("DOMContentLoaded", function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu) {
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-        });
-      });
+// Remove item from cart by index
+function removeFromCart(index) {
+    if (index >= 0 && index < cartItems.length) {
+        cartItems.splice(index, 1);
+        saveCart();
     }
-  });
+}
+
+// Build and render cart dropdown contents
+function updateCartDropdown() {
+    const container = document.getElementById('cart-items');
+    if (!container) return;
+    if (cartItems.length === 0) {
+        container.innerHTML = '<p class="text-center py-4">Your cart is empty</p>';
+        return;
+    }
+    let html = '';
+    let total = 0;
+    cartItems.forEach((it, idx) => {
+        total += Number(it.price || 0);
+        html += `
+            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                <div>
+                    <p class="font-medium">${it.name}</p>
+                    <p class="text-gray-500">$${Number(it.price).toFixed(2)}</p>
+                </div>
+                <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+    });
+    html += `
+        <div class="flex justify-between items-center py-2 font-bold">
+            <span>Total:</span>
+            <span>$${Number(total).toFixed(2)}</span>
+        </div>
+    `;
+    container.innerHTML = html;
+}
+
+// Show temporary "Item added" notification
+function showCartNotification() {
+    const n = document.getElementById('cart-notification');
+    if (!n) return;
+    n.classList.remove('hidden');
+    setTimeout(() => n.classList.add('hidden'), 3000);
+}
+
+/* =========================
+   Checkout: WhatsApp & Telegram
+   ========================= */
+
+// Generate order message (nice formatting + emojis)
+function generateOrderMessage(extraNotes = '') {
+    if (cartItems.length === 0) return "Hello 👋 I'd like to place an order, but my cart is empty.";
+    let total = 0;
+    let lines = [];
+    lines.push('👋 *Hello GET-REVIEWS!*');
+    lines.push('');
+    lines.push('🛒 *Order Summary:*');
+    cartItems.forEach(it => {
+        lines.push(`• ${it.name} — $${Number(it.price).toFixed(2)}`);
+        total += Number(it.price || 0);
+    });
+    lines.push(`*Total:* $${Number(total).toFixed(2)}`);
+    lines.push('');
+    lines.push('🔗 *Business Link:* (please provide your Google business link)');
+    lines.push('✍️ *Custom Text:* Yes (I will provide details)');
+    lines.push('⏱️ *Delivery Speed:* Gradual (recommended)');
+    if (extraNotes) {
+        lines.push('');
+        lines.push(`📝 Notes: ${extraNotes}`);
+    }
+    lines.push('');
+    lines.push('✅ Please confirm: payment method, estimated timeline.');
+    lines.push('🙏 Looking forward to your reply!');
+    return lines.join('\n');
+}
+
+// Open WhatsApp chat with prefilled message
+function whatsappCheckout() {
+    if (cartItems.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    const message = generateOrderMessage();
+    const phone = '905355404743'; // as requested
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// Open Telegram chat with prefilled message
+function telegramCheckout() {
+    if (cartItems.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    const message = generateOrderMessage();
+    const tg = 'https://t.me/Doxymedia';
+    // Telegram deep link with text support:
+    const url = `${tg}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+/* =========================
+   Direct order from package buttons
+   ========================= */
+
+// Map of prices for direct-order buttons (keeps content/prices unchanged)
+function getPriceValue(reviewCount) {
+    switch (reviewCount) {
+        case 3: return 0;
+        case 5: return 25;
+        case 10: return 45;
+        case 20: return 85;
+        case 30: return 125;
+        case 50: return 175;
+        case 100: return 300;
+        case 200: return 550;
+        default: return 0;
+    }
+}
+
+// Direct-order via WhatsApp for single package
+function orderNow(reviewCount) {
+    const price = getPriceValue(reviewCount);
+    const msgLines = [];
+    msgLines.push('👋 *Hello GET-REVIEWS!*');
+    msgLines.push('');
+    msgLines.push('🛒 *Direct Order:*');
+    msgLines.push(`• ${reviewCount} Google Reviews — $${Number(price).toFixed(2)}`);
+    msgLines.push('');
+    msgLines.push('🔗 *Business Link:* (please provide your Google business link)');
+    msgLines.push('✍️ *Custom Text:* Yes (I will provide details)');
+    msgLines.push('⏱️ *Delivery Speed:* Gradual (recommended)');
+    msgLines.push('');
+    msgLines.push('✅ Please confirm: payment method, estimated timeline.');
+    const phone = '905355404743';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msgLines.join('\n'))}`;
+    window.open(url, '_blank');
+}
+
+// Direct-order via Telegram for single package
+function orderViaTelegram(reviewCount) {
+    const price = getPriceValue(reviewCount);
+    const msgLines = [];
+    msgLines.push('👋 *Hello GET-REVIEWS!*');
+    msgLines.push('');
+    msgLines.push('🛒 *Direct Order:*');
+    msgLines.push(`• ${reviewCount} Google Reviews — $${Number(price).toFixed(2)}`);
+    msgLines.push('');
+    msgLines.push('🔗 *Business Link:* (please provide your Google business link)');
+    msgLines.push('✍️ *Custom Text:* Yes (I will provide details)');
+    msgLines.push('⏱️ *Delivery Speed:* Gradual (recommended)');
+    msgLines.push('');
+    msgLines.push('✅ Please confirm: payment method, estimated timeline.');
+    const tg = 'https://t.me/Doxymedia';
+    const url = `${tg}?text=${encodeURIComponent(msgLines.join('\n'))}`;
+    window.open(url, '_blank');
+}
+
+/* =========================
+   Misc UI: cart dropdown & mobile menu
+   ========================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Initial render
+    updateCartCount();
+    updateCartDropdown();
+
+    // Wire up checkout button inside cart dropdown (desktop)
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', whatsappCheckout);
+    }
+    // Wire up telegram button(s) inside dropdown by ID or class
+    const tgButtons = document.querySelectorAll('[data-telegram-checkout]');
+    tgButtons.forEach(btn => btn.addEventListener('click', telegramCheckout));
+
+    // Toggle cart dropdown
+    const cartBtn = document.getElementById('cart-btn');
+    const cartDropdown = document.getElementById('cart-dropdown');
+    if (cartBtn && cartDropdown) {
+        cartBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            cartDropdown.classList.toggle('hidden');
+        });
+    }
+
+    // Mobile cart button (if present) opens the dropdown panel or scrolls to packages
+    const mobileCartBtn = document.getElementById('mobile-cart-btn');
+    if (mobileCartBtn && cartDropdown) {
+        mobileCartBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            cartDropdown.classList.toggle('hidden');
+        });
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+    // ✅ Auto-close mobile menu when any link inside is clicked
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+        });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        const cd = document.getElementById('cart-dropdown');
+        if (cd && !cd.classList.contains('hidden')) {
+            const isClickInside = cd.contains(e.target) || (cartBtn && cartBtn.contains(e.target));
+            if (!isClickInside) cd.classList.add('hidden');
+        }
+    });
+});
+
+// Optional: Expose functions for inline onclick attributes (they're global by default)
+window.addToCart = addToCart;
+window.removeFromCart = removeFromCart;
+window.orderNow = orderNow;
+window.orderViaTelegram = orderViaTelegram;
+window.whatsappCheckout = whatsappCheckout;
+window.telegramCheckout = telegramCheckout;
+
+// Close mobile menu when a link is clicked
+if (mobileMenu) {
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+}
+
 </script>
 
-</body>
+
+<script>
+window.toggleFAQ = function(index) {
+    const content = document.getElementById(`faq-content-${index}`);
+    const icon = document.getElementById(`faq-icon-${index}`);
+    if (!content || !icon) return;
+    content.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+}
+</script>
 </html>
