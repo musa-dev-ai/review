@@ -160,83 +160,7 @@ button:hover {
 </style>
 </meta></head>
 <body class="font-sans bg-sky-50 text-gray-800">
-   <!-- 🚀 RevyUp Loader -->
-<div id="loader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white/80 backdrop-blur-md">
-  <!-- RevyUp dots -->
-  <div class="flex space-x-3 mb-4">
-    <span class="dot w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#fb923c] animate-dot delay-[0ms]"></span>   <!-- Orange -->
-    <span class="dot w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#22c55e] animate-dot delay-[200ms]"></span> <!-- Green -->
-    <span class="dot w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#0ea5e9] animate-dot delay-[400ms]"></span> <!-- Sky -->
-    <span class="dot w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#f97316] animate-dot delay-[600ms]"></span> <!-- Deep Orange -->
-  </div>
-
-  <!-- Animated text -->
-  <p class="text-gray-700 text-lg sm:text-xl font-semibold typewriter-text font-[Nunito Sans]">
-    Launching RevyUp<span class="blinking-cursor">|</span>
-  </p>
-</div>
-
-<style>
-  /* ===== Bigger Bounce Animation ===== */
-  @keyframes dotMove {
-    0%, 80%, 100% {
-      transform: translateY(0);
-      filter: brightness(100%);
-    }
-    40% {
-      transform: translateY(-20px); /* 👈 bigger bounce for PC */
-      filter: brightness(130%);
-    }
-  }
-  .animate-dot { animation: dotMove 1.3s ease-in-out infinite; }
-  .delay-\[0ms\]{animation-delay:0ms;}
-  .delay-\[200ms\]{animation-delay:200ms;}
-  .delay-\[400ms\]{animation-delay:400ms;}
-  .delay-\[600ms\]{animation-delay:600ms;}
-
-  /* ===== Typewriter Effect ===== */
-  @keyframes typing {
-    0% { width: 0 }
-    50% { width: 19ch }
-    100% { width: 19ch }
-  }
-  @keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0; }
-  }
-  .typewriter-text {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 0.15em solid transparent;
-    width: 19ch;
-    animation: typing 2.3s steps(19, end) infinite alternate;
-  }
-  .blinking-cursor {
-    display: inline-block;
-    width: 0.1em;
-    animation: blink 1s step-end infinite;
-    color: #fb923c;
-  }
-
-  /* ===== Fade Transition ===== */
-  #loader {
-    transition: opacity 0.8s ease;
-    -webkit-transition: opacity 0.8s ease; /* Android/iOS GPU */
-  }
-</style>
-
-<script>
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    if (loader) {
-      // ⏱ Keep loader visible ~3 s, then fade out
-      setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 800);
-      }, 3000);
-    }
-  });
-</script>
+   
 
 
     <!-- Floating WhatsApp Button -->
@@ -316,7 +240,7 @@ button:hover {
   <div class="absolute inset-0 z-0 flex items-center justify-center">
     <img 
       alt="Hero background" 
-      src="https://res.cloudinary.com/dgvnfptdq/image/upload/v1762063231/ChatGPT_Image_Nov_2_2025_06_58_57_AM_pp3qjv.png"
+      src="https://res.cloudinary.com/dgvnfptdq/image/upload/v1762112067/ChatGPT_Image_Nov_2_2025_08_33_00_PM_scszbp.png"
       class="max-w-none w-auto h-full sm:h-auto sm:w-full object-contain sm:object-cover object-center brightness-105 contrast-110 saturate-125"
     />
   </div>
@@ -326,10 +250,11 @@ button:hover {
     <!-- ✅ lighter glassy card: more transparent & mobile safe -->
     <div class="bg-white/25 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-lg border border-white/20 transition-all duration-500 hover:shadow-glow">
       <div class="max-w-xl mx-auto text-center text-gray-800">
-        <h1 class="text-2xl sm:text-4xl font-extrabold mb-4 leading-snug" style="font-family: 'Nunito Sans', sans-serif;">
-          Get 5-Star Online Reviews for Your Business<br/>
-          <span class="text-primary font-black">100% Real & Permanent</span>
-        </h1>
+       <h1 class="text-2xl sm:text-4xl font-extrabold mb-4 leading-snug" style="font-family: 'Nunito Sans', sans-serif;">
+  Get 5-Star Online Reviews for Your Business<br/>
+  <span class="text-gray-900 font-black">100% Real &amp; Permanent</span>
+
+</h1>
 
         <p class="text-sm sm:text-lg mb-6 text-gray-700" style="font-family: 'Nunito Sans', sans-serif;">
           Trusted by <strong>12,500+</strong> businesses • Starts at <strong>$5/review</strong> • No GMB password required
@@ -344,21 +269,26 @@ button:hover {
             <i class="fas fa-question-circle mr-2"></i> How does it work?
           </a>
 
-          <a 
-            href="#packages" 
-            class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all" 
-            style="font-family: 'Nunito Sans', sans-serif;"
-          >
-            <i class="fab fa-whatsapp mr-2"></i> Order via WhatsApp
-          </a>
+         <a
+  href="https://api.whatsapp.com/send?phone=905431568148&text=Good%20day!%20I'm%20interested%20in%20the%20services%20you%20offer%20and%20would%20like%20to%20get%20more%20information."
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all"
+  style="font-family: 'Nunito Sans', sans-serif;"
+>
+  <i class="fab fa-whatsapp mr-2"></i> Order via WhatsApp
+</a>
 
-          <a 
-            href="#packages" 
-            class="inline-flex items-center justify-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all" 
-            style="font-family: 'Nunito Sans', sans-serif;"
-          >
-            <i class="fab fa-telegram mr-2"></i> Order via Telegram
-          </a>
+<a
+  href="https://t.me/Doxymedia"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-flex items-center justify-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all"
+  style="font-family: 'Nunito Sans', sans-serif;"
+>
+  <i class="fab fa-telegram mr-2"></i> Order via Telegram
+</a>
+
         </div>
       </div>
     </div>
